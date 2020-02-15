@@ -6,7 +6,7 @@ import Form from "./Form";
 class App extends Component {
   render() {
     return (
-      <Router>
+      <Router basename="/webpack-demo">
         <div>
           <nav>
             <ul>
