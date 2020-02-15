@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Form from "./Form";
+import Page2 from "./Page2";
 
 class App extends Component {
   render() {
@@ -24,7 +25,7 @@ class App extends Component {
           <hr />
           <Switch>
             <Route path="/page1" component={Form} />
-            <Route path="/page2" render={() => <h2>Page2</h2>} />
+            <Route path="/page2" component={Page2} />
             <Route path="/" render={() => <h2>Home</h2>} />
           </Switch>
         </div>
