@@ -3,10 +3,15 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.js",
+  // entry: ["./src/index.js", "./src/scripts/bootstrap-input-spinner.js"],
+  entry: ["./src/index.js"],
   output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "docs")
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "docs"),
+    publicPath: "/"
+  },
+  devServer: {
+    historyApiFallback: true
   },
   module: {
     rules: [
@@ -16,6 +21,21 @@ module.exports = {
         use: {
           loader: "babel-loader"
         }
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "svg-url-loader",
+            options: {
+              limit: 10000
+            }
+          }
+        ]
       }
     ]
   },
