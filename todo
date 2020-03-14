@@ -1,7 +1,7 @@
 [x] Router https://reacttraining.com/react-router/web/example/basic
 [x] Components https://react-bootstrap.github.io/getting-started/introduction/
 
-[] useReduce commands: AddToCard, RemoveFromCard, ClearCard
+[] useReducer commands: AddToCard, RemoveFromCard, ClearCard
 
 [] flow
 [] tests

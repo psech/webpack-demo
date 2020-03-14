@@ -34,11 +34,6 @@ const UpdateParent = () => {
       <Row>
         <Col>
           <ProductList products={products} cb={handleOrder} />
-          {/* Should I have <ProductList /> component that generates each <ProductList data={products} cb={handleOrder} /> ?
-          {products.map((product, idx) => (
-            // <Product key={idx} data={product} cb={cb} />
-            <Product key={idx} data={product} cb={handleOrder} />
-          ))} */}
         </Col>
         <Col>
           <Summary data={shopCard} />
