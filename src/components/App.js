@@ -8,6 +8,7 @@ import MyForm from "./Form";
 import Page2 from "./Page2";
 import PageHooks from "./Page-Hooks";
 import UpdateParent from "../pages/UpdateParent";
+import ReducerPage from "../pages/ReducerPage";
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
               <Route path="/page2" component={Page2} />
               <Route path="/page-hooks" component={PageHooks} />
               <Route path="/update-parent" component={UpdateParent} />
+              <Route path="/reducer-page" component={ReducerPage} />
               <Route path="/" component={Home} />
             </Switch>
           </Row>

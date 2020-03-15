@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Summary from "../components/Summary";
 import ProductList from "../components/ProductList";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 
 const products = [
   { ProductName: "Product 1", UnitPrice: 2, ProductId: "abc-123" },
@@ -13,20 +13,20 @@ const products = [
 ];
 
 const UpdateParent = () => {
-  const [shopCard, setShopCard] = useState([]);
+  const [shopCart, setShopCart] = useState([]);
 
   const handleOrder = item => {
-    const foundItem = shopCard.find(
+    const foundItem = shopCart.find(
       current => current.ProductId === item.ProductId
     );
 
     const updatedShopCard = foundItem
-      ? shopCard.map(current =>
+      ? shopCart.map(current =>
           current.ProductId === item.ProductId ? item : current
         )
-      : shopCard.concat(item);
+      : shopCart.concat(item);
 
-    setShopCard(updatedShopCard);
+    setShopCart(updatedShopCard);
   };
 
   return (
@@ -36,7 +36,24 @@ const UpdateParent = () => {
           <ProductList products={products} cb={handleOrder} />
         </Col>
         <Col>
-          <Summary data={shopCard} />
+          <Summary data={shopCart} />
+        </Col>
+      </Row>
+      <Row className="justify-content-md-center">
+        <Col lg="2">
+          <Button variant="success" size="sm" block>
+            Confirm
+          </Button>
+        </Col>
+        <Col lg="2">
+          <Button
+            variant="danger"
+            size="sm"
+            block
+            onClick={() => window.location.reload(false)}
+          >
+            Reset
+          </Button>
         </Col>
       </Row>
     </Container>

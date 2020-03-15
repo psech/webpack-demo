@@ -15,6 +15,7 @@ const Header = () => {
           <Nav.Link href="/page2">Page 2</Nav.Link>
           <Nav.Link href="/page-hooks">Page Hooks</Nav.Link>
           <Nav.Link href="/update-parent">Update Parent</Nav.Link>
+          <Nav.Link href="/reducer-page">Reducer Page</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

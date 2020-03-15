@@ -3,7 +3,6 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  // entry: ["./src/index.js", "./src/scripts/bootstrap-input-spinner.js"],
   entry: ["./src/index.js"],
   output: {
     filename: "bundle.js",
@@ -36,7 +35,18 @@ module.exports = {
             }
           }
         ]
-      }
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          // Translates CSS into CommonJS
+          'css-loader',
+          // Compiles Sass to CSS
+          'sass-loader',
+        ],
+      },
     ]
   },
   plugins: [
